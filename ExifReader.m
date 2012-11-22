@@ -6,6 +6,7 @@
 - (void) getExifData:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* pluginResult = nil;
     NSURL * url = [NSURL URLWithString: [command.arguments objectAtIndex:0]];
+    NSString * metatarget = [NSString stringWithUTF8String:[command.arguments objectAtIndex:1]];
     
     if (url && url.scheme && url.host) {
         
@@ -13,7 +14,7 @@
         CGImageSourceRef imgref = CGImageSourceCreateWithURL((CFURLRef)url,NULL);
 
         // right now, we are only interested in the Exif data, so we pull it out of the meta data dict returned by the following mouthful
-        NSDictionary * imgMeta = [(NSDictionary*)CGImageSourceCopyPropertiesAtIndex(imgref, 0, NULL) objectForKey:@"{Exif}"];
+        NSDictionary * imgMeta = [(NSDictionary*)CGImageSourceCopyPropertiesAtIndex(imgref, 0, NULL) objectForKey:metatarget];
         
         if (imgMeta) {
             // just in case
