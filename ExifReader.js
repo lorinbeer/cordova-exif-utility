@@ -4,6 +4,13 @@ var ExifReader = {
                             fail,
                             "ExifReader",
                             "getExifData",
-                            [filepath]);
+                            [filepath,"{Exif}"]);
+    },
+    getTiffData: function(filepath, success, fail) {
+        return Cordova.exec(success,
+                            fail,
+                            "ExifReader",
+                            "getTiffData",
+                            [filepath, "{Tiff}"]);
     }
 };
