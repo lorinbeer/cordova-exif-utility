@@ -43,4 +43,11 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (NSDictionary*) getMiscMetaDataFromInfoDict: (NSDictionary*) info {
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+                [info objectForKey:@"DPIHeight"], @"DPIHeight",
+                [info objectForKey:@"DPIWidth"], @"DPIWidth",
+                [info objectForKey:@"Orientation"], @"Orientation", nil];
+}
+
 @end
