@@ -1,4 +1,4 @@
-# Cordova Image Meta Data Plugin
+# Cordova Exif Utility
 offers functionality for retrieving meta data embedded in image headers for Cordova/PhoneGap
 
 ## Status
