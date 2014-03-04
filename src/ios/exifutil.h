@@ -19,7 +19,7 @@
 
 #import <Cordova/CDV.h>
 
-@interface ExifReader : CDVPlugin
+@interface ExifUtil : CDVPlugin
 
 - (void) getExifData:(CDVInvokedUrlCommand*)command;
 - (void) stripGeoData:(CDVInvokedUrlCommand*)command;

@@ -11,8 +11,8 @@
     <repo></repo>
     <issue></issue>
 
-    <js-module src="www/exifreader.js" name="exifreader">
-        <clobbers target="ExifReader" /> 
+    <js-module src="www/exifutil.js" name="exifutil">
+        <clobbers target="ExifUtil" /> 
     </js-module>
     
     <!-- android
@@ -28,11 +28,11 @@
 
     <!-- ios -->
     <platform name="ios">
-        <feature name="ExifReader">
-            <param name="ios-package" value="ExifReader"/>
+        <feature name="ExifUtil">
+            <param name="ios-package" value="ExifUtil"/>
         </feature> 
-        <header-file src="src/ios/ExifReader.h" />
-	    <source-file src="src/ios/ExifReader.m" />
+        <header-file src="src/ios/exifutil.h" />
+	    <source-file src="src/ios/exifutil.m" />
     </platform>
 
 </plugin>

@@ -17,10 +17,10 @@
  under the License.
  */
 
-#import "ExifReader.h"
+#import "ExifUtil.h"
 #import <ImageIO/ImageIO.h>
 
-@implementation ExifReader
+@implementation ExifUtil 
 
 - (void) getExifData:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* pluginResult = nil;
