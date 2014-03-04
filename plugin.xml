@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="org.ronin.cordova.exifreader"
+      version="0.2.7">
+    <name>ExifUtility</name>
+    <description>Cordova Exif Utility Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,exif</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/exifreader.js" name="exifreader">
+        <clobbers target="ExifReader" /> 
+    </js-module>
+    
+    <!-- android
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Battery" >
+                <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/BatteryListener.java" target-dir="src/org/apache/cordova/batterystatus" />
+    </platform>
+-->
+
+    <!-- ios -->
+    <platform name="ios">
+        <feature name="ExifReader">
+            <param name="ios-package" value="ExifReader"/>
+        </feature> 
+        <header-file src="src/ios/ExifReader.h" />
+	    <source-file src="src/ios/ExifReader.m" />
+    </platform>
+
+</plugin>
