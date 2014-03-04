@@ -1,4 +1,4 @@
-#import "ImageMetaDataReader.h"
+#import "ExifReader.h"
 #import <ImageIO/ImageIO.h>
 
 @implementation ExifReader
