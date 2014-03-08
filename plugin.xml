@@ -1,38 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-      id="org.ronin.cordova.exifreader"
-      version="0.2.7">
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="org.ronin.exifutility" version="0.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>ExifUtility</name>
-    <description>Cordova Exif Utility Plugin</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,exif</keywords>
-    <repo></repo>
-    <issue></issue>
 
-    <js-module src="www/exifutil.js" name="exifutil">
-        <clobbers target="ExifUtil" /> 
+    <js-module name="ExifUtility" src="www/ExifUtility.js">
+        <clobbers target="cordova.plugins.ExifUtility" />
     </js-module>
-    
-    <!-- android
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Battery" >
-                <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ExifUtility">
+                <param name="ios-package" value="CDVExifUtility" />
             </feature>
         </config-file>
-        <source-file src="src/android/BatteryListener.java" target-dir="src/org/apache/cordova/batterystatus" />
+        <source-file src="src/ios/CDVExifUtility.m" />
     </platform>
--->
-
-    <!-- ios -->
-    <platform name="ios">
-        <feature name="ExifUtil">
-            <param name="ios-package" value="ExifUtil"/>
-        </feature> 
-        <header-file src="src/ios/exifutil.h" />
-	    <source-file src="src/ios/exifutil.m" />
+    
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="ExifUtility"><param name="android-package" value="org.ronin.exifutility.ExifUtility" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml">
+        </config-file><source-file src="src/android/ExifUtility.java" target-dir="src/org/ronin/exifutility/ExifUtility" />
     </platform>
 
 </plugin>
