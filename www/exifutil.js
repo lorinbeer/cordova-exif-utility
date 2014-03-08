@@ -20,32 +20,34 @@
 */
 
 
+var exec = require('cordova/exec');
+
 /**
- * Cordova ExifReader Plugin
+ * Cordova ExifUtil Plugin
  *   Access a jpeg image exif header data from javascript
  *
  */
-var ExifReader = {
+var ExifUtil = {
     /**
      * getExifData
      *   returns contents of exif header block of a jpeg image as a json formatted data string
      * 
      */
     getExifData: function(filepath, success, fail) {
-        return Cordova.exec(success, 
-                            fail,
-                            "ExifReader",
-                            "getExifData",
-                            [filepath,"exif"]);
+        exec(success, 
+             fail,
+             "ExifUtil",
+             "getExifData",
+             [filepath,"exif"]);
     },
     /**
      * getTiffData
      *   returns contents of the tiff header block of a jpeg image as a json formatted data string
      */
     getTiffData: function(filepath, success, fail) {
-        return Cordova.exec(success,
+        return exec(success,
                             fail,
-                            "ExifReader",
+                            "ExifUtil",
                             "getTiffData",
                             [filepath, "tiff"]);
     },
@@ -55,9 +57,9 @@ var ExifReader = {
      *   strips all exif data from the image header of a jpeg image
      */
     stripExifData: function(filepath, success, fail) {
-        return Cordova.exec(success,
+        return exec(success,
                             fail,
-                            "ExifReader",
+                            "ExifUtil",
                             "stripTiffData",
                             [filepath]); 
     },
@@ -66,9 +68,9 @@ var ExifReader = {
      * strips the exif geolocation subifd from the exif header data of a jpeg image
      */
     stripGeoData: function(filepath, success, fail) {
-        return Cordova.exec(success,
+        return exec(success,
                             fail,
-                            "ExifReader",
+                            "ExifUtil",
                             "stripGeoData",
                             [filepath]);
     }
@@ -77,4 +79,4 @@ var ExifReader = {
 
 
 
-module.exports = ExifReader;
+module.exports = ExifUtil;
